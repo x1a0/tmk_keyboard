@@ -90,15 +90,15 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
            LSFT,NO,  NO,  NO,  NO,  BTN3,BTN2,BTN1,BTN4,BTN5,NO,  RSFT,NO, \
                 LALT,LGUI,          BTN1,               TRNS,TRNS),
 
-    /* Layer 5: Mouse mode(IJKL)[Space]
+    /* Layer 4: Mouse mode(IJKL)[Space]
      * ,-----------------------------------------------------------.
      * |Esc| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
      * |-----------------------------------------------------------|
-     * |Tab  |   |   |   |   |   |MwL|MwD|McU|MwU|MwR|Wbk|Wfr|Alt-T|
+     * |Tab  |   |   |   |   |   |MwL|MwD|   |MwU|MwR|Wbk|Wfr|Alt-T|
      * |-----------------------------------------------------------|
-     * |Contro|   |   |   |   |   |Mb2|McL|McD|McR|Mb1|   |Return  |
+     * |Contro|   |   |   |   |   |MbL|McD|McU|McR|   |   |Return  |
      * |-----------------------------------------------------------|
-     * |Shift   |   |   |   |   |Mb3|Mb2|Mb1|Mb4|Mb5|   |Shift |   |
+     * |Shift   |   |   |   |   |Mb3|Mb1|Mb2|Mb4|Mb5|   |Shift |   |
      * `-----------------------------------------------------------'
      *      |Alt |Gui  |          Mb1          |Fn   |Fn |
      *      `--------------------------------------------'
@@ -106,9 +106,9 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      */
     [4] = \
     KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
-           FN8, NO,  NO,  NO,  NO,  NO,  WH_L,WH_D,MS_U,WH_U,WH_R,WBAK,WFWD,FN8, \
-           LCTL,VOLD,VOLU,MUTE,NO,  NO,  NO,  MS_L,MS_D,MS_R,BTN1,NO,  ENT, \
-           LSFT,NO,  NO,  NO,  NO,  BTN3,BTN2,BTN1,BTN4,BTN5,NO,  RSFT,NO, \
+           FN8, NO,  NO,  NO,  NO,  NO,  WH_L,WH_D,NO  ,WH_U,WH_R,WBAK,WFWD,FN8, \
+           LCTL,VOLD,VOLU,MUTE,NO,  NO,  MS_L,MS_D,MS_U,MS_R,NO  ,NO,  ENT, \
+           LSFT,NO,  NO,  NO,  NO,  BTN3,BTN1,BTN2,BTN4,BTN5,NO,  RSFT,NO, \
                 LALT,LGUI,          TRNS,               TRNS,TRNS),
 
 #if 0
