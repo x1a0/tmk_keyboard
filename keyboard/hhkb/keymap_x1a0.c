@@ -19,7 +19,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      * |-----------------------------------------------------------|
      * |Fn7     |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|Fn2|Shift |Fn1|
      * `-----------------------------------------------------------'
-     *       |Alt|Gui |         Fn4           |Fn5  |Fn5|
+     *       |Alt|Gui  |         Fn4           |Fn5  |Fn5|
      *       `-------------------------------------------'
      */
     [0] = \
@@ -41,7 +41,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      * `-----------------------------------------------------------'
      *       |Alt|Gui  |         Space         |Gui  |Alt|
      *       `-------------------------------------------'
-     */ 
+     */
     [1] = \
     KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
            CAPS,NO,  NO,  NO,  NO,  NO,  NO,  NO,  PSCR,SLCK,PAUS, UP,  NO,  BSPC, \
@@ -124,7 +124,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      * `-----------------------------------------------------------'
      *      |Alt |Gui  |          Mb1          |Alt  |Fn0|
      *      `--------------------------------------------'
-     * Mc: Mouse Cursor / Mb: Mouse Button / Mw: Mouse Wheel 
+     * Mc: Mouse Cursor / Mb: Mouse Button / Mw: Mouse Wheel
      */
     KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
            TAB, NO,  NO,  NO,  NO,  NO,  WH_L,WH_D,WH_U,WH_R,NO,  NO,  NO,  BSPC, \
@@ -144,7 +144,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      * `-----------------------------------------------------------'
      *      |Alt |Gui  |          Fn0          |Alt  |Fn0|
      *      `--------------------------------------------'
-     * Mc: Mouse Cursor / Mb: Mouse Button / Mw: Mouse Wheel 
+     * Mc: Mouse Cursor / Mb: Mouse Button / Mw: Mouse Wheel
      */
     KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
            FN8, NO,  NO,  NO,  NO,  NO,  WH_L,WH_D,WH_U,WH_R,NO,  WBAK,WFWD,FN8, \
@@ -203,7 +203,7 @@ const uint16_t fn_actions[] PROGMEM = {
     [4] = ACTION_LAYER_TAP_KEY(4, KC_SPC),            // Mousekey layer with Space
     [5] = ACTION_LAYER_MOMENTARY(3),                  // Mousekey layer
     [6] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_ENT),      // RControl with tap Enter
-    [7] = ACTION_MODS_ONESHOT(MOD_LSFT),              // Oneshot Shift
+    [7] = ACTION_MODS_ONESHOT(MOD_RSFT),              // Oneshot Shift
     [8] = ACTION_MACRO(ALT_TAB),                      // Application switching
 
 //  [x] = ACTION_LMOD_TAP_KEY(KC_LCTL, KC_BSPC),        // LControl with tap Backspace
