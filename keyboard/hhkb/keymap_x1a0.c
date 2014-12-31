@@ -15,19 +15,19 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      * |-----------------------------------------------------------|
      * |Tab  |  Q|  W|  E|  R|  T|  Y|  U|  I|  O|  P|  [|  ]|Backs|
      * |-----------------------------------------------------------|
-     * |Contro|  A|  S|  D|  F|  G|  H|  J|  K|  L|Fn3|  '|Fn6     |
+     * |Contro|  A|  S|  D|  F|  G|  H|  J|  K|  L|Fn3|  '|Fn4     |
      * |-----------------------------------------------------------|
-     * |Fn7     |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|Fn2|Shift |Fn1|
+     * |Shift   |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|Fn2|Fn5   |Fn1|
      * `-----------------------------------------------------------'
-     *       |Alt|Gui  |         Fn4           |Fn5  |Fn5|
+     *       |Alt|Gui  |         Space         |Gui  |Alt|
      *       `-------------------------------------------'
      */
     [0] = \
     KEYMAP(ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV, \
            TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSPC, \
-           LCTL,A,   S,   D,   F,   G,   H,   J,   K,   L,   FN3, QUOT,FN6, \
-           FN7, Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, FN2, RSFT,FN1, \
-                LALT,LGUI,          FN4,                FN5, FN5),
+           LCTL,A,   S,   D,   F,   G,   H,   J,   K,   L,   FN3, QUOT,FN4, \
+           LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, FN2, FN5, FN1, \
+                LALT,LGUI,          SPC,                RGUI,RALT),
 
     /* Layer 1: HHKB mode[HHKB Fn]
      * ,-----------------------------------------------------------.
@@ -69,34 +69,13 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
            LSFT,NO,  NO,  NO,  NO,  NO,  HOME,PGDN,PGUP,END, TRNS,RSFT,NO, \
                 LALT,LGUI,          SPC,                RGUI,RALT),
 
-    /* Layer 3: Mouse mode(IJKL)[Semicolon]
+    /* Layer 3: Mouse mode(HJKL)[Semicolon]
      * ,-----------------------------------------------------------.
      * |Esc| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
      * |-----------------------------------------------------------|
      * |Tab  |   |   |   |   |   |MwL|MwD|McU|MwU|MwR|Wbk|Wfr|Alt-T|
      * |-----------------------------------------------------------|
-     * |Contro|   |   |   |   |   |Mb2|McL|McD|McR|Fn |   |Return  |
-     * |-----------------------------------------------------------|
-     * |Shift   |   |   |   |   |Mb3|Mb2|Mb1|Mb4|Mb5|   |Shift |   |
-     * `-----------------------------------------------------------'
-     *      |Alt |Gui  |          Mb1          |Fn   |Fn |
-     *      `--------------------------------------------'
-     * Mc: Mouse Cursor / Mb: Mouse Button / Mw: Mouse Wheel8
-     */
-    [3] = \
-    KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
-           FN8, NO,  NO,  NO,  NO,  NO,  WH_L,WH_D,MS_U,WH_U,WH_R,WBAK,WFWD,FN8, \
-           LCTL,ACL0,ACL1,ACL2,ACL2,NO,  NO,  MS_L,MS_D,MS_R,TRNS,NO,  ENT, \
-           LSFT,NO,  NO,  NO,  NO,  BTN3,BTN2,BTN1,BTN4,BTN5,NO,  RSFT,NO, \
-                LALT,LGUI,          BTN1,               TRNS,TRNS),
-
-    /* Layer 4: Mouse mode(IJKL)[Space]
-     * ,-----------------------------------------------------------.
-     * |Esc| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
-     * |-----------------------------------------------------------|
-     * |Tab  |   |   |   |   |   |MwL|MwD|   |MwU|MwR|Wbk|Wfr|Alt-T|
-     * |-----------------------------------------------------------|
-     * |Contro|   |   |   |   |   |MbL|McD|McU|McR|   |   |Return  |
+     * |Contro|   |   |   |   |   |McL|McD|McU|McR|Fn |   |Return  |
      * |-----------------------------------------------------------|
      * |Shift   |   |   |   |   |Mb3|Mb1|Mb2|Mb4|Mb5|   |Shift |   |
      * `-----------------------------------------------------------'
@@ -104,74 +83,13 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      *      `--------------------------------------------'
      * Mc: Mouse Cursor / Mb: Mouse Button / Mw: Mouse Wheel8
      */
-    [4] = \
+    [3] = \
     KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
-           FN8, NO,  NO,  NO,  NO,  NO,  WH_L,WH_D,NO  ,WH_U,WH_R,WBAK,WFWD,FN8, \
-           LCTL,VOLD,VOLU,MUTE,NO,  NO,  MS_L,MS_D,MS_U,MS_R,NO  ,NO,  ENT, \
+           FN6, NO,  NO,  NO,  NO,  NO,  WH_L,WH_D,MS_U,WH_U,WH_R,WBAK,WFWD,FN6, \
+           LCTL,ACL0,ACL1,ACL2,ACL2,NO,  MS_L,MS_D,MS_U,MS_R,TRNS,NO,  ENT, \
            LSFT,NO,  NO,  NO,  NO,  BTN3,BTN1,BTN2,BTN4,BTN5,NO,  RSFT,NO, \
-                LALT,LGUI,          TRNS,               TRNS,TRNS),
+                LALT,LGUI,          BTN1,               TRNS,TRNS),
 
-#if 0
-    /* Layer 3: Mouse mode(HJKL)[Semicolon]
-     * ,-----------------------------------------------------------.
-     * |Esc| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
-     * |-----------------------------------------------------------|
-     * |Tab  |   |   |   |   |   |MwL|MwD|MwU|MwR|   |   |   |Backs|
-     * |-----------------------------------------------------------|
-     * |Contro|   |   |   |   |   |McL|McD|McU|McR|Fn0|   |Return  |
-     * |-----------------------------------------------------------|
-     * |Shift   |   |   |   |   |Mb3|Mb2|Mb1|Mb4|Mb5|   |Shift |   |
-     * `-----------------------------------------------------------'
-     *      |Alt |Gui  |          Mb1          |Alt  |Fn0|
-     *      `--------------------------------------------'
-     * Mc: Mouse Cursor / Mb: Mouse Button / Mw: Mouse Wheel
-     */
-    KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
-           TAB, NO,  NO,  NO,  NO,  NO,  WH_L,WH_D,WH_U,WH_R,NO,  NO,  NO,  BSPC, \
-           LCTL,NO,  ACL0,ACL1,ACL2,NO,  MS_L,MS_D,MS_U,MS_R,TRNS,QUOT,ENT, \
-           LSFT,NO,  NO,  NO,  NO,  BTN3,BTN2,BTN1,BTN4,BTN5,SLSH,RSFT,NO, \
-                LALT,LGUI,          BTN1,               RALT,TRNS),
-
-    /* Layer4: Mouse mode(HJKL)[Space]
-     * ,-----------------------------------------------------------.
-     * |Esc| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
-     * |-----------------------------------------------------------|
-     * |Tab  |   |   |   |   |   |MwL|MwD|MwU|MwR|   |Wbk|Wfr|Alt-T|
-     * |-----------------------------------------------------------|
-     * |Contro|   |   |   |   |   |McL|McD|McU|McR|Fn0|   |Return  |
-     * |-----------------------------------------------------------|
-     * |Shift   |   |   |   |   |Mb3|Mb2|Mb1|Mb4|Mb5|   |Shift |   |
-     * `-----------------------------------------------------------'
-     *      |Alt |Gui  |          Fn0          |Alt  |Fn0|
-     *      `--------------------------------------------'
-     * Mc: Mouse Cursor / Mb: Mouse Button / Mw: Mouse Wheel
-     */
-    KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
-           FN8, NO,  NO,  NO,  NO,  NO,  WH_L,WH_D,WH_U,WH_R,NO,  WBAK,WFWD,FN8, \
-           LCTL,NO,  ACL0,ACL1,ACL2,NO,  MS_L,MS_D,MS_U,MS_R,BTN1,NO,  ENT, \
-           LSFT,NO,  NO,  NO,  NO,  BTN3,BTN2,BTN1,BTN4,BTN5,NO,  RSFT,NO, \
-                LALT,LGUI,          TRNS,               RALT,RGUI),
-#endif
-#if 0
-    /* Layer x: Matias half-qwerty keyboard style[Space]
-     * ,-----------------------------------------------------------.
-     * |  -|  0|  9|  8|  7|  6|  5|  4|  3|  2|  1|   |   |   |Esc|
-     * |-----------------------------------------------------------|
-     * |Backs|  P|  O|  I|  U|  Y|  T|  R|  E|  W|  Q|   |   |Tab  |
-     * |-----------------------------------------------------------|
-     * |Contro|  ;|  L|  K|  J|  H|  G|  F|  D|  S|  A|Con|Control |
-     * |-----------------------------------------------------------|
-     * |Shift   |  /|  .|  ,|  M|  N|  B|  V|  C|  X|  Z|Shift |   |
-     * `-----------------------------------------------------------'
-     *      |Alt |Gui  |          Fn0          |Alt  |Gui|
-     *      `--------------------------------------------'
-     */
-    KEYMAP(MINS,0,   9,   8,   7,   6,   5,   4,   3,   2,   1,   NO,  NO,  NO,  ESC, \
-           BSPC,P,   O,   I,   U,   Y,   T,   R,   E,   W,   Q,   NO,  NO,  TAB, \
-           LCTL,SCLN,L,   K,   J,   H,   G,   F,   D,   S,   A,   RCTL,RCTL, \
-           LSFT,SLSH,DOT, COMM,M,   N,   B,   V,   C,   X,   Z,   RSFT,NO, \
-                LALT,LGUI,          TRNS,               RALT,RGUI),
-#endif
 };
 
 
@@ -184,7 +102,7 @@ enum function_id {
 enum macro_id {
     HELLO,
     VOLUP,
-    ALT_TAB,
+    GUI_TAB,
 };
 
 
@@ -200,11 +118,9 @@ const uint16_t fn_actions[] PROGMEM = {
     [1] = ACTION_LAYER_TAP_TOGGLE(1),                 // HHKB layer(toggle with 5 taps)
     [2] = ACTION_LAYER_TAP_KEY(2, KC_SLASH),          // Cursor layer with Slash*
     [3] = ACTION_LAYER_TAP_KEY(3, KC_SCLN),           // Mousekey layer with Semicolon*
-    [4] = ACTION_LAYER_TAP_KEY(4, KC_SPC),            // Mousekey layer with Space
-    [5] = ACTION_LAYER_MOMENTARY(3),                  // Mousekey layer
-    [6] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_ENT),      // RControl with tap Enter
-    [7] = ACTION_MODS_ONESHOT(MOD_RSFT),              // Oneshot Shift
-    [8] = ACTION_MACRO(ALT_TAB),                      // Application switching
+    [4] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_ENT),      // RControl with tap Enter
+    [5] = ACTION_MODS_ONESHOT(MOD_RSFT),              // Oneshot Shift
+    [6] = ACTION_MACRO(GUI_TAB),                      // Application switching
 
 //  [x] = ACTION_LMOD_TAP_KEY(KC_LCTL, KC_BSPC),        // LControl with tap Backspace
 //  [x] = ACTION_LMOD_TAP_KEY(KC_LCTL, KC_ESC),         // LControl with tap Esc
@@ -228,9 +144,9 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
             return (record->event.pressed ?
                     MACRO( D(VOLU), U(VOLU), END ) :
                     MACRO_NONE );
-        case ALT_TAB:
+        case GUI_TAB:
             return (record->event.pressed ?
-                    MACRO( D(LALT), D(TAB), END ) :
+                    MACRO( D(LGUI), D(TAB), END ) :
                     MACRO( U(TAB), END ));
     }
     return MACRO_NONE;
