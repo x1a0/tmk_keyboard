@@ -73,7 +73,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      * ,-----------------------------------------------------------.
      * |Esc| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
      * |-----------------------------------------------------------|
-     * |Tab  |   |   |   |   |   |MwL|MwD|McU|MwU|MwR|Wbk|Wfr|Alt-T|
+     * |Tab  |   |   |   |   |   |MwL|MwD|McU|MwU|MwR|Wbk|Wfr|Backs|
      * |-----------------------------------------------------------|
      * |Contro|   |   |   |   |   |McL|McD|McU|McR|Fn |   |Return  |
      * |-----------------------------------------------------------|
@@ -85,7 +85,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      */
     [3] = \
     KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
-           FN6, NO,  NO,  NO,  NO,  NO,  WH_L,WH_D,MS_U,WH_U,WH_R,WBAK,WFWD,FN6, \
+           TAB, NO,  NO,  NO,  NO,  NO,  WH_L,WH_D,MS_U,WH_U,WH_R,WBAK,WFWD,TAB, \
            LCTL,ACL0,ACL1,ACL2,ACL2,NO,  MS_L,MS_D,MS_U,MS_R,TRNS,NO,  ENT, \
            LSFT,NO,  NO,  NO,  NO,  BTN3,BTN1,BTN2,BTN4,BTN5,NO,  RSFT,NO, \
                 LALT,LGUI,          BTN1,               TRNS,TRNS),
@@ -120,7 +120,6 @@ const uint16_t fn_actions[] PROGMEM = {
     [3] = ACTION_LAYER_TAP_KEY(3, KC_SCLN),           // Mousekey layer with Semicolon*
     [4] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_ENT),      // RControl with tap Enter
     [5] = ACTION_MODS_ONESHOT(MOD_RSFT),              // Oneshot Shift
-    [6] = ACTION_MACRO(GUI_TAB),                      // Application switching
 
 //  [x] = ACTION_LMOD_TAP_KEY(KC_LCTL, KC_BSPC),        // LControl with tap Backspace
 //  [x] = ACTION_LMOD_TAP_KEY(KC_LCTL, KC_ESC),         // LControl with tap Esc
