@@ -15,9 +15,9 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      * |-----------------------------------------------------------|
      * |Tab  |  Q|  W|  E|  R|  T|  Y|  U|  I|  O|  P|  [|  ]|Backs|
      * |-----------------------------------------------------------|
-     * |Contro|  A|  S|  D|  F|  G|  H|  J|  K|  L|Fn3|  '|Fn4     |
+     * |Contro|  A|  S|  D|  F|  G|  H|  J|  K|  L|Fn2|  '|Fn4     |
      * |-----------------------------------------------------------|
-     * |Fn5     |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|Fn2|Fn6   |Fn1|
+     * |Shift   |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|Fn3|Shift |Fn1|
      * `-----------------------------------------------------------'
      *       |Alt|Gui  |         Space         |Gui  |Alt|
      *       `-------------------------------------------'
@@ -25,8 +25,8 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
     [0] = \
     KEYMAP(ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV, \
            TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSPC, \
-           LCTL,A,   S,   D,   F,   G,   H,   J,   K,   L,   FN3, QUOT,FN4, \
-           FN5 ,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, FN2, FN6, FN1, \
+           LCTL,A,   S,   D,   F,   G,   H,   J,   K,   L,   FN2, QUOT,FN4, \
+           LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, FN3, RSFT,FN1, \
                 LALT,LGUI,          SPC,                RGUI,RALT),
 
     /* Layer 1: HHKB mode[HHKB Fn]
@@ -65,8 +65,8 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
     [2] = \
     KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
            TAB, HOME,PGDN,UP,  PGUP,END, HOME,PGDN,PGUP,END, NO,  NO,  NO,  BSPC, \
-           LCTL,NO,  LEFT,DOWN,RGHT,NO,  LEFT,DOWN,UP,  RGHT,NO,  NO,  ENT, \
-           LSFT,NO,  NO,  NO,  NO,  NO,  HOME,PGDN,PGUP,END, TRNS,RSFT,NO, \
+           LCTL,NO,  LEFT,DOWN,RGHT,NO,  LEFT,DOWN,UP,  RGHT,TRNS,  NO,  ENT, \
+           LSFT,NO,  NO,  NO,  NO,  NO,  HOME,PGDN,PGUP,END, NO  ,RSFT,NO, \
                 LALT,LGUI,          SPC,                RGUI,RALT),
 
     /* Layer 3: Mouse mode(HJKL)[Semicolon]
@@ -86,8 +86,8 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
     [3] = \
     KEYMAP(GRV, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL, \
            TAB, NO,  NO,  NO,  NO,  NO,  WH_L,WH_D,MS_U,WH_U,WH_R,WBAK,WFWD,TAB, \
-           LCTL,ACL0,ACL1,ACL2,ACL2,NO,  MS_L,MS_D,MS_U,MS_R,TRNS,NO,  ENT, \
-           LSFT,NO,  NO,  NO,  NO,  BTN3,BTN1,BTN2,BTN4,BTN5,NO,  RSFT,NO, \
+           LCTL,ACL0,ACL1,ACL2,ACL2,NO,  MS_L,MS_D,MS_U,MS_R,NO  ,NO,  ENT, \
+           LSFT,NO,  NO,  NO,  NO,  BTN3,BTN1,BTN2,BTN4,BTN5,TRNS,  RSFT,NO, \
                 LALT,LGUI,          BTN1,               TRNS,TRNS),
 
 };
@@ -95,10 +95,12 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
 
 
 /* id for user defined functions */
+/*
 enum function_id {
     LSHIFT_LPAREN,
     RSHIFT_RPAREN,
 };
+*/
 
 
 /*
@@ -111,17 +113,18 @@ const uint16_t fn_actions[] PROGMEM = {
 #endif
     [0] = ACTION_DEFAULT_LAYER_SET(0),                // Default layer(not used)
     [1] = ACTION_LAYER_TAP_TOGGLE(1),                 // HHKB layer(toggle with 5 taps)
-    [2] = ACTION_LAYER_TAP_KEY(2, KC_SLASH),          // Cursor layer with Slash*
-    [3] = ACTION_LAYER_TAP_KEY(3, KC_SCLN),           // Mousekey layer with Semicolon*
+    [2] = ACTION_LAYER_TAP_KEY(2, KC_SCLN),           // Cursor layer with Semicolon*
+    [3] = ACTION_LAYER_TAP_KEY(3, KC_SLASH),          // Mousekey layer with Slash*
     [4] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_ENT),      // RControl with tap Enter
-    [5] = ACTION_FUNCTION_TAP(LSHIFT_LPAREN),         // Function: LShift with tap '('
-    [6] = ACTION_FUNCTION_TAP(RSHIFT_RPAREN),         // Function: RShift with tap ')'
+    /*[5] = ACTION_FUNCTION_TAP(LSHIFT_LPAREN),         // Function: LShift with tap '('*/
+    /*[6] = ACTION_FUNCTION_TAP(RSHIFT_RPAREN),         // Function: RShift with tap ')'*/
 };
 
 
 /*
  * user defined action function
  */
+/*
 void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
 {
     if (record->event.pressed) dprint("P"); else dprint("R");
@@ -184,4 +187,4 @@ void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
             break;
     }
 }
-
+*/
